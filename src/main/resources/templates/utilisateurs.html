@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="w3.css"/>
+
+<head>
+    <title>Friends of Mine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<style>
+    table, td, tr, th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        margin: 5px;
+        padding: 5px;
+    }
+</style>
+
+<body>
+<div th:replace="fragments/header"></div>
+<h1>Utilisateurs</h1>
+<p>
+<table>
+
+    <th>Nom</th>
+    <th>Prénom</th>
+    <th>Email</th>
+    <th>Sexe</th>
+    <th>Date de naissance</th>
+
+    <tr th:each="utilisateur : ${utilisateurs}">
+        <td th:text="${utilisateur.nom}">Nom</td>
+        <td th:text="${utilisateur.prenom}">Prenom ...</td>
+        <td th:text="${utilisateur.mail}">Mail ...</td>
+        <td th:text="${utilisateur.sexe}">sexe</td>
+        <td th:text="${utilisateur.date}">date</td>
+    </tr>
+</table>
+</p>
+</body>
+
+</html>

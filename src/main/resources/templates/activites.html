@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="w3.css"/>
+
+<head>
+    <title>Friends of Mine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<style>
+    table, td, tr, th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        margin: 5px;
+        padding: 5px;
+    }
+</style>
+
+<body>
+<div th:replace="fragments/header"></div>
+<h1>Activités</h1>
+<p>
+<table>
+
+    <th>Titre</th>
+    <th>Descriptif</th>
+
+    <tr th:each="activite : ${activites}">
+        <td th:text="${activite.titre}">titre</td>
+        <td th:text="${activite.descriptif}">descriptif</td>
+    </tr>
+</table>
+</p>
+</body>
+
+</html>
